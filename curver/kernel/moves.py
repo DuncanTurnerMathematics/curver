@@ -45,7 +45,11 @@ class Move(ABC):
         return self._inverse
     
     @abstractmethod
-    def apply_lamination(self, lamination):  # pylint: disable=no-self-use,unused-argument
+    def package(self):
+        ''' Return a small amount of data such that self.source_triangulation.encode([data]) == self.encode(). '''
+    
+    @abstractmethod
+    def apply_lamination(self, lamination):
         ''' Return the lamination obtained by mapping the given lamination through this move. '''
     
     @abstractmethod
