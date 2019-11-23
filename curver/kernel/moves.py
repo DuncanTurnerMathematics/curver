@@ -39,10 +39,7 @@ class Move(ABC):
         
         return curver.kernel.Encoding([self]).promote()
     
-    def package(self):
-        ''' Return a small amount of data such that self.source_triangulation.encode([data]) == self.encode(). '''
-    
-    def inverse(self):  # pylint: disable=no-self-use
+    def inverse(self):
         ''' Return the inverse of this move. '''
         
         return self._inverse
@@ -52,19 +49,19 @@ class Move(ABC):
         ''' Return the lamination obtained by mapping the given lamination through this move. '''
     
     @abstractmethod
-    def apply_homology(self, homology_class):  # pylint: disable=no-self-use,unused-argument
+    def apply_homology(self, homology_class):
         ''' Return the homology class obtained by mapping the given homology class through this move. '''
 
 class FlipGraphMove(Move):
     ''' A Move between two triangulations in the same flip graph. '''
     @abstractmethod
-    def flip_mapping(self):  # pylint: disable=no-self-use
+    def flip_mapping(self):
         ''' Return a Mapping equal to self.encoding() but that only uses EdgeFlips and Isometries. '''
         
         return NotImplemented
     
     @abstractmethod
-    def pl_action(self, multicurve):  # pylint: disable=no-self-use, unused-argument
+    def pl_action(self, multicurve):
         ''' Return the PartialLinearFunction that this FlipGraphMove applies to the given multicurve. '''
         
         return NotImplemented
