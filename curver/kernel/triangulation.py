@@ -20,7 +20,7 @@ def norm(number):
 class Edge:
     ''' This represents an oriented edge, labelled with an integer.
     
-    It is specified by its label and its inverse edge is labelled with ~its label.
+    It is specified by its label and its inverse edge is labelled with ~(its label).
     
     These are really just integers but with fancy printing and indexing set up on them. '''
     

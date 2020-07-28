@@ -2,12 +2,14 @@
 To do
 =====
 
-As part of its analysis pylint will highlight places in curves where work is flagged as ``TODO: #)``.
+As part of its analysis pylint will highlight places in curver where work is flagged as ``TODO: #)``.
 These numbers roughly correspond to:
 
 1. Major feature.
 2. Minor feature.
 3. Performance.
 4. Miscellaneous, usually writing up proofs of correctness.
+
+This should be thought of as similar to IT support severity
 
 Currently there are no major features left to implement.

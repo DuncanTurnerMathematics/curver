@@ -22,7 +22,8 @@ class Twist(FlipGraphMove):
         # Theorem: The right number of flips to do is:
         #  - weight - self.curve.dual_weight(parallel) in the non-isolating case
         #  - 3*num_tripods is in the isolating case.
-        # Proof: TODO.
+        # Proof: TODO. MAYBE DUNCAN TURNER COULD DO THIS
+
         num_flips = self.curve.weight() - self.curve.dual_weight(a)
         
         twist = self.curve.triangulation.id_encoding()

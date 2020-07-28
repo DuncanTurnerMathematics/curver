@@ -11,6 +11,7 @@ ARROW_FRAC = 0.55
 
 def dot(a, b):
     return a[0] * b[0] + a[1] * b[1]
+    # DUNCAN TURNER: I think this is just the standard dot product in the real plane
 
 def intersection(A, d, B, d2):
     # Find the intersection parameters of A + t d and B + t2 d2
@@ -81,6 +82,8 @@ class DrawableObject:
         self.canvas.itemconfig(self.drawn, fill=self.colour)
     
     def centre(self):
+        '''This has the obvious geometric analogy that to find the centroid of a polygon, you take the 2 dimensional arithmetic mean of the vertices'''
+
         return sum([v.vector for v in self.vertices], curver.application.Vector2(0, 0)) * (1.0 / len(self))
     
     def update(self):

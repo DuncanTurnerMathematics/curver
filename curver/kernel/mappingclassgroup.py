@@ -74,7 +74,7 @@ class MappingClassGroup:
         
         The letters to choose from can be specified or, alternatively, the set
         of positive, negative or all (default) mapping classes can be used by using the
-        flags postive and negative. '''
+        flags positive and negative. '''
         
         if letters is None:
             pos_keys = sorted(self.pos_mapping_classes.keys())

@@ -10,6 +10,8 @@ REGEX_IS_SPHERE_BRAID = re.compile(r'SB_(?P<num_strands>\d+)$')
 # TODO: 3) Document all of these cases.
 
 def S_0_n(n):
+# TODO: DuncanTurnerMathematics to make this more formal
+    '''This provides a triangulation of a sphere punctured at least 3 times, so the Zeta invariant is good enough 28/07/2020'''
     # A triangulation of S_{0,n}.
     assert n >= 3
     
@@ -49,6 +51,10 @@ def S_0_n(n):
     return curver.kernel.MappingClassGroup(curves=curves, arcs=arcs)
 
 def S_1_n(n):
+    #TODO DuncanTurnerMathematics to make this more formal
+    '''This provides a triangulation of a torus punctured at least once, so the Zeta invariant is good enough 28/07/2020'''
+    #TODO Duncan Also draw diagram of this triangulation in ascii
+
     assert n >= 1
     
     curves, arcs = dict(), dict()
