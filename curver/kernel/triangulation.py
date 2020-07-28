@@ -61,6 +61,7 @@ class Edge:
         return Edge(~self.label)
     
     def sign(self):
+        #On 28/07/2020 wrote a sign indicator for integers to test the unfamiliar syntax of "return before if", it worked fine.
         ''' Return the sign (+/-1) of this edge. '''
         
         return +1 if self.label == self.index else -1
@@ -118,16 +119,18 @@ class Triangle:
 # Remark: In other places in the code you will often see L(triangulation). This is the space
 # of laminations on triangulation with the coordinate system induced by the triangulation.
 
+
 class Triangulation:
+    #TODO DUNCANTURNERMATHEMATICS 4) Should the edges be numbered from 0 to n or 0 to 3n? DUNCAN to find out
     ''' This represents a triangulation of a punctured surface.
     
-    It is specified by a list of Triangles. Its edges must be numbered 0, 1, ... '''
+    It is specified by a list of Triangles. Its edges must be numbered 0, 1, ...,  '''
     def __init__(self, triangles):
         # We will sort the triangles into a canonical ordering, the one where the edges are ordered
         # minimally by label. This allows for fast comparisons.
         self.triangles = sorted(triangles, key=lambda t: t.labels)
         self.num_triangles = len(self.triangles)
-        self.zeta = self.num_triangles * 3 // 2  # = self.num_edges.
+        self.zeta = self.num_triangles * 3 // 2  #FIXME This is the number of edges.
         self.indices = [index for index in range(self.zeta)]  # pylint: disable=unnecessary-comprehension
         self.labels = [label for label in range(-self.zeta, self.zeta)]  # pylint: disable=unnecessary-comprehension
         self.edges = [Edge(label) for label in self.labels]
